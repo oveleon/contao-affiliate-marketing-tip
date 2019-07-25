@@ -75,8 +75,8 @@
         <target>Offen</target>
       </trans-unit>
       <trans-unit id="tl_marketing_tip.success">
-        <source>Erfolgreich</source>
-        <target>Successful</target>
+        <source>Successful</source>
+        <target>Erfolgreich</target>
       </trans-unit>
       <trans-unit id="tl_marketing_tip.rejected">
         <source>Rejected</source>
