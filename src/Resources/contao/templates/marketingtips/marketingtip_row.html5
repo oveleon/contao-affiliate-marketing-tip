@@ -3,6 +3,6 @@
   <td><?= $this->street ?></td>
   <td><?= $this->postal ?></td>
   <td><?= $this->city ?></td>
-  <td><?= $this->status ?></td>
+  <td class="status_<?= $this->statusValue ?>"><span><?= $this->status ?></span></td>
   <td><?= $this->linkDelete ?></td>
 </tr>

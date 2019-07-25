@@ -242,6 +242,7 @@ class ModuleMarketingTipList extends \Module
 
         $objTemplate->class = $strClass;
         $objTemplate->tstamp = \Date::parse($objPage->datimFormat, $objMarketingTip->tstamp);
+        $objTemplate->statusValue = $objMarketingTip->status;
         $objTemplate->status = $GLOBALS['TL_LANG']['tl_marketing_tip'][$objMarketingTip->status];
         $objTemplate->linkDelete = '<a href="'.$objPage->getFrontendUrl().'?delete='.$objMarketingTip->id.'">'.$GLOBALS['TL_LANG']['tl_marketing_tip']['deleteMarketingTip'].'</a>';
 
