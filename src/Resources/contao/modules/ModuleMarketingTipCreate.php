@@ -1,14 +1,13 @@
 <?php
 /**
- * This file is part of Contao EstateManager.
+ * This file is part of Contao Affiliate Marketing Tip Bundle.
  *
- * @link      https://www.contao-estatemanager.com/
- * @source    https://github.com/contao-estatemanager/affiliate-marketing-tip
+ * @link      https://www.oveleon.de/
+ * @source    https://github.com/oveleon/contao-affiliate-marketing-tip
  * @copyright Copyright (c) 2019  Oveleon GbR (https://www.oveleon.de)
- * @license   https://www.contao-estatemanager.com/lizenzbedingungen.html
  */
 
-namespace ContaoEstateManager\AffiliateMarketingTip;
+namespace Oveleon\ContaoAffiliateMarketingTip;
 
 use Contao\CoreBundle\Exception\PageNotFoundException;
 use Patchwork\Utf8;

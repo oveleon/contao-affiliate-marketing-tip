@@ -1,10 +1,10 @@
 {
-  "name":"contao-estatemanager/affiliate-marketing-tip",
+  "name":"oveleon/contao-affiliate-marketing-tip",
   "type":"contao-bundle",
-  "description":"Affiliate Markting Tip Extension for Contao EstateManager",
-  "keywords":["contao","estatemanager","real estate","estate","property","affiliate","marketing", "tip"],
-  "homepage":"https://www.contao-estatemanager.com/",
-  "license":"proprietary",
+  "description":"Affiliate Markting Tip Extension for Contao 4 Open Source CMS",
+  "keywords":["contao","affiliate-marketing-tip"],
+  "homepage":"https://www.contao-oveleon.com/",
+  "license":"MIT",
   "authors":[
     {
       "name":"Oveleon",
@@ -14,8 +14,7 @@
   ],
   "require":{
     "php":">=7.1",
-    "contao/core-bundle":"^4.4",
-    "contao-estatemanager/core": "*"
+    "contao/core-bundle":"^4.4"
   },
   "require-dev": {
     "contao/manager-plugin": "^2.0"
@@ -27,7 +26,7 @@
   },
   "autoload":{
     "psr-4": {
-      "ContaoEstateManager\\AffiliateMarketingTip\\": "src/"
+      "Oveleon\\ContaoAffiliateMarketingTip\\": "src/"
     },
     "classmap": [
       "src/Resources/contao/"
@@ -40,6 +39,6 @@
     ]
   },
   "extra":{
-    "contao-manager-plugin": "ContaoEstateManager\\AffiliateMarketingTip\\ContaoManager\\Plugin"
+    "contao-manager-plugin": "Oveleon\\ContaoAffiliateMarketingTip\\ContaoManager\\Plugin"
   }
 }

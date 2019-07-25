@@ -1,23 +1,21 @@
 <?php
 /**
- * This file is part of Contao EstateManager.
+ * This file is part of Contao Affiliate Marketing Tip Bundle.
  *
- * @link      https://www.contao-estatemanager.com/
- * @source    https://github.com/contao-estatemanager/affiliate-marketing-tip
+ * @link      https://www.oveleon.de/
+ * @source    https://github.com/oveleon/contao-affiliate-marketing-tip
  * @copyright Copyright (c) 2019  Oveleon GbR (https://www.oveleon.de)
- * @license   https://www.contao-estatemanager.com/lizenzbedingungen.html
  */
 
 declare(strict_types=1);
 
-namespace ContaoEstateManager\AffiliateMarketingTip\ContaoManager;
+namespace Oveleon\ContaoAffiliateMarketingTip\ContaoManager;
 
 use Contao\CoreBundle\ContaoCoreBundle;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
-use ContaoEstateManager\AffiliateMarketingTip\EstateManagerAffiliateMarketingTip;
-use ContaoEstateManager\EstateManager;
+use Oveleon\ContaoAffiliateMarketingTip\ContaoAffiliateMarketingTip;
 
 class Plugin implements BundlePluginInterface
 {
@@ -27,9 +25,9 @@ class Plugin implements BundlePluginInterface
     public function getBundles(ParserInterface $parser): array
     {
         return [
-            BundleConfig::create(EstateManagerAffiliateMarketingTip::class)
-                ->setLoadAfter([ContaoCoreBundle::class, EstateManager::class])
-                ->setReplace(['estatemanager-affiliate-marketing-tip']),
+            BundleConfig::create(ContaoAffiliateMarketingTip::class)
+                ->setLoadAfter([ContaoCoreBundle::class])
+                ->setReplace(['affiliate-marketing-tip']),
         ];
     }
 }
