@@ -247,7 +247,7 @@ class ModuleMarketingTipList extends \Module
 
         if ($objMarketingTip->status !== 'success')
         {
-            $objTemplate->linkDelete = '<a href="'.$objPage->getFrontendUrl().'?delete='.$objMarketingTip->id.'">'.$GLOBALS['TL_LANG']['tl_marketing_tip']['deleteMarketingTip'].'</a>';
+            $objTemplate->linkDelete = '<a href="'.$objPage->getFrontendUrl().'?delete='.$objMarketingTip->id.'" title="'.$GLOBALS['TL_LANG']['tl_marketing_tip']['deleteMarketingTip'].'">'.$GLOBALS['TL_LANG']['tl_marketing_tip']['deleteMarketingTip'].'</a>';
         }
 
         // HOOK: add custom logic
