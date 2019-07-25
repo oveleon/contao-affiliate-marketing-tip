@@ -9,6 +9,10 @@
         <source>Save</source>
         <target>Speichern</target>
       </trans-unit>
+      <trans-unit id="MSC.newMarketingTipSubject">
+        <source>New marketing tip on %s</source>
+        <target>Neuer Vermarktungstip auf %s</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

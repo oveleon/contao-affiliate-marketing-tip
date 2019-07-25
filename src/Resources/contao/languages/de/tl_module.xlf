@@ -1,0 +1,22 @@
+<?xml version="1.0" ?><xliff version="1.1">
+  <file datatype="php" original="src/Resources/contao/languages/en/tl_module.php" source-language="en" target-language="de">
+    <body>
+      <trans-unit id="tl_module.marketingTip_activate.0">
+        <source>Send info e-mail</source>
+        <target>Benachrichtigungsmail verschicken</target>
+      </trans-unit>
+      <trans-unit id="tl_module.marketingTip_activate.1">
+        <source>Send an info e-mail to the given e-mail address.</source>
+        <target>Eine Benachrichtigungsmail an die hinterlegte E-Mail-Adresse senden.</target>
+      </trans-unit>
+      <trans-unit id="tl_module.marketingTip_recipient.0">
+        <source>Recipient address</source>
+        <target>Empfänger-Adresse</target>
+      </trans-unit>
+      <trans-unit id="tl_module.marketingTip_recipient.1">
+        <source>Separate multiple e-mail addresses with comma.</source>
+        <target>Mehrere E-Mail-Adressen können mit Komma getrennt werden.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

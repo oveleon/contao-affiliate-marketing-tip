@@ -143,7 +143,7 @@ class ModuleMarketingTipCreate extends \Module
         $arrData['member'] = $this->User->id;
         $arrData['status'] = 'pending';
 
-        //$this->sendInfoMail($arrData);
+        $this->sendInfoMail($arrData);
 
         // Create the user
         $objNewMarketingTip = new MarketingTipModel();
@@ -176,24 +176,23 @@ class ModuleMarketingTipCreate extends \Module
      */
     protected function sendInfoMail($arrData)
     {
-        // Prepare the simple token data
-        $arrTokenData = $arrData;
-        $arrTokenData['domain'] = \Idna::decode(\Environment::get('host'));
-        $arrTokenData['link'] = \Idna::decode(\Environment::get('base')) . \Environment::get('request') . ((strpos(\Environment::get('request'), '?') !== false) ? '&' : '?') . 'token=' . $arrData['activation'];
-        $arrTokenData['channels'] = '';
-
-        $bundles = \System::getContainer()->getParameter('kernel.bundles');
-
-        // Deprecated since Contao 4.0, to be removed in Contao 5.0
-        $arrTokenData['channel'] = $arrTokenData['channels'];
-
         $objEmail = new \Email();
 
         $objEmail->from = $GLOBALS['TL_ADMIN_EMAIL'];
         $objEmail->fromName = $GLOBALS['TL_ADMIN_NAME'];
-        $objEmail->subject = sprintf($GLOBALS['TL_LANG']['MSC']['emailSubject'], \Idna::decode(\Environment::get('host')));
-        $objEmail->text = \StringUtil::parseSimpleTokens($this->reg_text, $arrTokenData);
-        $objEmail->sendTo($arrData['email']);
+        $objEmail->subject = sprintf($GLOBALS['TL_LANG']['MSC']['newMarketingTipSubject'], \Idna::decode(\Environment::get('host')));
+
+        $strData = "\n\n";
+
+        // Add marketing tip details
+        foreach ($arrData as $k=>$v)
+        {
+            $v = \StringUtil::deserialize($v);
+
+            $strData .= $GLOBALS['TL_LANG']['tl_markteting_tip'][$k][0] . ': ' . (\is_array($v) ? implode(', ', $v) : $v) . "\n";
+        }
+
+        $objEmail->sendTo($this->marketingTip_recipient);
     }
 
     /**
