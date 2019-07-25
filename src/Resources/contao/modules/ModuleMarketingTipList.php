@@ -53,6 +53,19 @@ class ModuleMarketingTipList extends \Module
             return '';
         }
 
+        $this->import('FrontendUser', 'User');
+
+		// Delete marketing tip
+		if (\Input::get('delete'))
+        {
+            $objMarketingTip = MarketingTipModel::findById(\Input::get('delete'));
+
+            if ($objMarketingTip->member === $this->User->id)
+            {
+                $objMarketingTip->delete();
+            }
+        }
+
         if ($this->customTpl != '')
         {
             $this->strTemplate = $this->customTpl;
@@ -66,7 +79,8 @@ class ModuleMarketingTipList extends \Module
 	 */
 	protected function compile()
 	{
-        $this->import('FrontendUser', 'User');
+        \System::loadLanguageFile('tl_marketing_tip');
+        $this->loadDataContainer('tl_marketing_tip');
 
 		$limit = null;
 		$offset = 0;
@@ -132,6 +146,12 @@ class ModuleMarketingTipList extends \Module
 		{
 			$this->Template->marketingTips = $this->parseMarketingTips($objMarketingTips);
 		}
+
+        $this->Template->labelDate   = $GLOBALS['TL_LANG']['tl_marketing_tip']['date'][0];
+        $this->Template->labelStreet = $GLOBALS['TL_LANG']['tl_marketing_tip']['street'][0];
+        $this->Template->labelPostal = $GLOBALS['TL_LANG']['tl_marketing_tip']['postal'][0];
+        $this->Template->labelCity   = $GLOBALS['TL_LANG']['tl_marketing_tip']['city'][0];
+        $this->Template->labelStatus = $GLOBALS['TL_LANG']['tl_marketing_tip']['status'][0];
 	}
 
 	/**
@@ -208,6 +228,9 @@ class ModuleMarketingTipList extends \Module
      */
     protected function parseMarketingTip($objMarketingTip, $strClass='', $intCount=0)
     {
+        /** @var \PageModel $objPage */
+        global $objPage;
+
         /** @var \FrontendTemplate|object $objTemplate */
         $objTemplate = new \FrontendTemplate('marketingtip_row');
         $objTemplate->setData($objMarketingTip->row());
@@ -218,7 +241,9 @@ class ModuleMarketingTipList extends \Module
         }
 
         $objTemplate->class = $strClass;
-        $objTemplate->linkDelete = '<a href="/delete">delete</a>';
+        $objTemplate->tstamp = \Date::parse($objPage->datimFormat, $objMarketingTip->tstamp);
+        $objTemplate->status = $GLOBALS['TL_LANG']['tl_marketing_tip'][$objMarketingTip->status];
+        $objTemplate->linkDelete = '<a href="'.$objPage->getFrontendUrl().'?delete='.$objMarketingTip->id.'">'.$GLOBALS['TL_LANG']['tl_marketing_tip']['deleteMarketingTip'].'</a>';
 
         // HOOK: add custom logic
         if (isset($GLOBALS['TL_HOOKS']['parseMarketingTip']) && \is_array($GLOBALS['TL_HOOKS']['parseMarketingTip']))

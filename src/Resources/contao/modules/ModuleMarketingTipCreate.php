@@ -141,6 +141,7 @@ class ModuleMarketingTipCreate extends \Module
     {
         $arrData['tstamp'] = time();
         $arrData['member'] = $this->User->id;
+        $arrData['status'] = 'pending';
 
         //$this->sendInfoMail($arrData);
 

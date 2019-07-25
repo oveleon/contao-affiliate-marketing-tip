@@ -6,14 +6,19 @@
     <p class="empty"><?= $this->empty ?></p>
   <?php else: ?>
     <table>
-      <tr>
-        <td>Status</td>
-        <td>Straße</td>
-        <td>Postleitzahl</td>
-        <td>Stadt</td>
-        <td></td>
-      </tr>
+      <thead>
+        <tr>
+          <td><?= $this->labelDate ?></td>
+          <td><?= $this->labelStreet ?></td>
+          <td><?= $this->labelPostal ?></td>
+          <td><?= $this->labelCity ?></td>
+          <td><?= $this->labelStatus ?></td>
+          <td></td>
+        </tr>
+      </thead>
+      <tbody>
         <?= implode('', $this->marketingTips) ?>
+      </tbody>
     </table>
     <?= $this->pagination ?>
   <?php endif; ?>

@@ -57,6 +57,35 @@
         <source>Date and time of the latest revision</source>
         <target>Datum und Uhrzeit der letzten Änderung</target>
       </trans-unit>
+      <trans-unit id="tl_marketing_tip.date.0">
+        <source>Date</source>
+        <target>Datum</target>
+      </trans-unit>
+      <trans-unit id="tl_marketing_tip.date.1">
+        <source>Date and time of the creation</source>
+        <target>Datum und Uhrzeit der Eintragung</target>
+      </trans-unit>
+
+      <trans-unit id="tl_marketing_tip.pending">
+        <source>Pending</source>
+        <target>Wird geprüft</target>
+      </trans-unit>
+      <trans-unit id="tl_marketing_tip.open">
+        <source>Open</source>
+        <target>Offen</target>
+      </trans-unit>
+      <trans-unit id="tl_marketing_tip.success">
+        <source>Erfolgreich</source>
+        <target>Successful</target>
+      </trans-unit>
+      <trans-unit id="tl_marketing_tip.rejected">
+        <source>Rejected</source>
+        <target>Abgelehnt</target>
+      </trans-unit>
+      <trans-unit id="tl_marketing_tip.deleteMarketingTip">
+        <source>Delete</source>
+        <target>Löschen</target>
+      </trans-unit>
 
       <trans-unit id="tl_marketing_tip.member_legend">
         <source>Member</source>

@@ -145,7 +145,7 @@ $GLOBALS['TL_DCA']['tl_marketing_tip'] = array
             'inputType'               => 'select',
             'options'                 => array('pending', 'open', 'success', 'rejected'),
             'eval'                    => array('submitOnChange'=>true, 'mandatory'=>true, 'chosen'=>true, 'includeBlankOption'=>true, 'tl_class'=>'w50'),
-            'sql'                     => "int(10) unsigned NOT NULL default '0'",
+            'sql'                     => "varchar(8) NOT NULL default ''",
         ),
         'reason' => array
         (

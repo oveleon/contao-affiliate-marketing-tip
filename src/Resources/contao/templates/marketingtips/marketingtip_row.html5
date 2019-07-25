@@ -1,7 +1,8 @@
 <tr class="marketing-tip<?= $this->class ?>">
-  <td><?= $this->status ?></td>
+  <td><?= $this->tstamp ?></td>
   <td><?= $this->street ?></td>
   <td><?= $this->postal ?></td>
   <td><?= $this->city ?></td>
+  <td><?= $this->status ?></td>
   <td><?= $this->linkDelete ?></td>
 </tr>
