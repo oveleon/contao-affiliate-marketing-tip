@@ -176,6 +176,9 @@ class ModuleMarketingTipCreate extends \Module
      */
     protected function sendInfoMail($arrData)
     {
+        unset($arrData['status']);
+        $arrData['member'] = $this->User->username;
+
         $objEmail = new \Email();
 
         $objEmail->from = $GLOBALS['TL_ADMIN_EMAIL'];
@@ -189,7 +192,12 @@ class ModuleMarketingTipCreate extends \Module
         {
             $v = \StringUtil::deserialize($v);
 
-            $strData .= $GLOBALS['TL_LANG']['tl_markteting_tip'][$k][0] . ': ' . (\is_array($v) ? implode(', ', $v) : $v) . "\n";
+            if ($k == 'tstamp' && \strlen($v))
+            {
+                $v = \Date::parse(\Config::get('dateFormat'), $v);
+            }
+
+            $strData .= $GLOBALS['TL_LANG']['tl_marketing_tip'][$k][0] . ': ' . (\is_array($v) ? implode(', ', $v) : $v) . "\n";
         }
 
         $objEmail->text = sprintf($GLOBALS['TL_LANG']['MSC']['newMarketingTipText'], $strData . "\n") . "\n";
