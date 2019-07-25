@@ -244,7 +244,11 @@ class ModuleMarketingTipList extends \Module
         $objTemplate->tstamp = \Date::parse($objPage->datimFormat, $objMarketingTip->tstamp);
         $objTemplate->statusValue = $objMarketingTip->status;
         $objTemplate->status = $GLOBALS['TL_LANG']['tl_marketing_tip'][$objMarketingTip->status];
-        $objTemplate->linkDelete = '<a href="'.$objPage->getFrontendUrl().'?delete='.$objMarketingTip->id.'">'.$GLOBALS['TL_LANG']['tl_marketing_tip']['deleteMarketingTip'].'</a>';
+
+        if ($objMarketingTip->status !== 'success')
+        {
+            $objTemplate->linkDelete = '<a href="'.$objPage->getFrontendUrl().'?delete='.$objMarketingTip->id.'">'.$GLOBALS['TL_LANG']['tl_marketing_tip']['deleteMarketingTip'].'</a>';
+        }
 
         // HOOK: add custom logic
         if (isset($GLOBALS['TL_HOOKS']['parseMarketingTip']) && \is_array($GLOBALS['TL_HOOKS']['parseMarketingTip']))
