@@ -3,6 +3,6 @@
   <td><?= $this->street ?></td>
   <td><?= $this->postal ?></td>
   <td><?= $this->city ?></td>
-  <td><span class="status_<?= $this->statusValue ?>"><?= $this->status ?></span></td>
+  <td><span class="status_<?= $this->statusValue ?>"<?php if ($this->reason): ?> title="<?= $this->reason ?>"<?php endif; ?>><?= $this->status ?></span></td>
   <td><?= $this->linkDelete ?></td>
 </tr>
