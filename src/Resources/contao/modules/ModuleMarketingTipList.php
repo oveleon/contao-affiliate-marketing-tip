@@ -66,6 +66,8 @@ class ModuleMarketingTipList extends \Module
 	 */
 	protected function compile()
 	{
+        $this->import('FrontendUser', 'User');
+
 		$limit = null;
 		$offset = 0;
 
