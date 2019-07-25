@@ -192,6 +192,7 @@ class ModuleMarketingTipCreate extends \Module
             $strData .= $GLOBALS['TL_LANG']['tl_markteting_tip'][$k][0] . ': ' . (\is_array($v) ? implode(', ', $v) : $v) . "\n";
         }
 
+        $objEmail->text = sprintf($GLOBALS['TL_LANG']['MSC']['newMarketingTipText'], $strData . "\n") . "\n";
         $objEmail->sendTo($this->marketingTip_recipient);
     }
 

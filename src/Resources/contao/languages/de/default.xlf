@@ -13,6 +13,10 @@
         <source>New marketing tip on %s</source>
         <target>Neuer Vermarktungstip auf %s</target>
       </trans-unit>
+      <trans-unit id="MSC.newMarketingTipText">
+        <source>A new marketing tip was posted on your website.%sPlease check the address information. </source>
+        <target>Ein neuer Vermarktungs-Tipp wurde auf Ihrer Webseite abgegeben.%sBitte überprüfen Sie die Adressinformationen.</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
