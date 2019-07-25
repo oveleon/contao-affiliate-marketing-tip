@@ -7,14 +7,14 @@
   <?php else: ?>
     <table>
       <thead>
-        <th>
-          <td><?= $this->labelDate ?></td>
-          <td><?= $this->labelStreet ?></td>
-          <td><?= $this->labelPostal ?></td>
-          <td><?= $this->labelCity ?></td>
-          <td><?= $this->labelStatus ?></td>
-          <td></td>
-        </th>
+        <tr>
+          <th><?= $this->labelDate ?></th>
+          <th><?= $this->labelStreet ?></th>
+          <th><?= $this->labelPostal ?></th>
+          <th><?= $this->labelCity ?></th>
+          <th><?= $this->labelStatus ?></th>
+          <th></th>
+        </tr>
       </thead>
       <tbody>
         <?= implode('', $this->marketingTips) ?>
