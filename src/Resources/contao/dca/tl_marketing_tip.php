@@ -22,7 +22,7 @@ $GLOBALS['TL_DCA']['tl_marketing_tip'] = array
             'keys' => array
             (
                 'id' => 'primary',
-                'parent' => 'index'
+                'member' => 'index'
             )
         )
     ),
@@ -116,7 +116,7 @@ $GLOBALS['TL_DCA']['tl_marketing_tip'] = array
             'exclude'                 => true,
             'search'                  => true,
             'inputType'               => 'text',
-            'eval'                    => array('maxlength'=>255, 'feEditable'=>true, 'feViewable'=>true, 'tl_class'=>'w50'),
+            'eval'                    => array('maxlength'=>255, 'feEditable'=>true, 'tl_class'=>'w50'),
             'sql'                     => "varchar(255) NOT NULL default ''"
         ),
         'postal' => array
@@ -125,7 +125,7 @@ $GLOBALS['TL_DCA']['tl_marketing_tip'] = array
             'exclude'                 => true,
             'search'                  => true,
             'inputType'               => 'text',
-            'eval'                    => array('maxlength'=>32, 'feEditable'=>true, 'feViewable'=>true, 'tl_class'=>'w50'),
+            'eval'                    => array('maxlength'=>32, 'feEditable'=>true, 'tl_class'=>'w50'),
             'sql'                     => "varchar(32) NOT NULL default ''"
         ),
         'city' => array
@@ -134,7 +134,7 @@ $GLOBALS['TL_DCA']['tl_marketing_tip'] = array
             'exclude'                 => true,
             'search'                  => true,
             'inputType'               => 'text',
-            'eval'                    => array('maxlength'=>255, 'feEditable'=>true, 'feViewable'=>true, 'tl_class'=>'w50'),
+            'eval'                    => array('maxlength'=>255, 'feEditable'=>true, 'tl_class'=>'w50'),
             'sql'                     => "varchar(255) NOT NULL default ''"
         ),
         'status' => array
@@ -144,16 +144,15 @@ $GLOBALS['TL_DCA']['tl_marketing_tip'] = array
             'search'                  => true,
             'inputType'               => 'select',
             'options'                 => array('pending', 'open', 'success', 'rejected'),
-            'eval'                    => array('submitOnChange'=>true, 'mandatory'=>true, 'chosen'=>true, 'includeBlankOption'=>true, 'feViewable'=>true, 'tl_class'=>'w50'),
+            'eval'                    => array('submitOnChange'=>true, 'mandatory'=>true, 'chosen'=>true, 'includeBlankOption'=>true, 'tl_class'=>'w50'),
             'sql'                     => "int(10) unsigned NOT NULL default '0'",
-            'relation'                => array('type'=>'hasOne', 'load'=>'lazy')
         ),
         'reason' => array
         (
             'label'                   => &$GLOBALS['TL_LANG']['tl_marketing_tip']['reason'],
             'exclude'                 => true,
             'inputType'               => 'text',
-            'eval'                    => array('maxlength'=>255, 'feViewable'=>true, 'tl_class'=>'w50'),
+            'eval'                    => array('maxlength'=>255, 'tl_class'=>'w50'),
             'sql'                     => "varchar(255) NOT NULL default ''"
         ),
     )

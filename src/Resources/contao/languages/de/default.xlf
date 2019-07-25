@@ -5,6 +5,10 @@
         <source>No marketing tips available.</source>
         <target>Es sind keine Vermartkungstips vorhanden.</target>
       </trans-unit>
+      <trans-unit id="MSC.createMarketingTip">
+        <source>Save</source>
+        <target>Speichern</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
