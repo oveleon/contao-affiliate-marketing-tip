@@ -67,6 +67,7 @@ class ModuleMarketingTipCreate extends \Module
 	protected function compile()
 	{
         $this->import('FrontendUser', 'User');
+        \System::loadLanguageFile('tl_marketing_tip');
         $this->loadDataContainer('tl_marketing_tip');
 
         $this->Template->fields = '';

@@ -5,7 +5,16 @@
   <?php if (empty($this->marketingTips)): ?>
     <p class="empty"><?= $this->empty ?></p>
   <?php else: ?>
-    <?= implode('', $this->marketingTips) ?>
+    <table>
+      <tr>
+        <td>Status</td>
+        <td>Straße</td>
+        <td>Postleitzahl</td>
+        <td>Stadt</td>
+        <td></td>
+      </tr>
+        <?= implode('', $this->marketingTips) ?>
+    </table>
     <?= $this->pagination ?>
   <?php endif; ?>
 
