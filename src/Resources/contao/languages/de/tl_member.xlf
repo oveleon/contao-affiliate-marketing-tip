@@ -1,0 +1,14 @@
+<?xml version="1.0" ?><xliff version="1.1">
+  <file datatype="php" original="src/Resources/contao/languages/en/tl_member.php" source-language="en" target-language="de">
+    <body>
+      <trans-unit id="tl_member.marketingTip_partner.0">
+        <source>Partner code</source>
+        <target>Partner-Code</target>
+      </trans-unit>
+      <trans-unit id="tl_member.marketingTip_partner.1">
+        <source>The assigned partner code can be entered here.</source>
+        <target>Hier kann der zugeordnete Partner-Code eingetragen werden.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
