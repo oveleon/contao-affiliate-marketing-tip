@@ -102,27 +102,27 @@
 
       <trans-unit id="tl_marketing_tip.show.0">
         <source>Marketing tip details</source>
-        <target>Marketingtipdetails</target>
+        <target>Marketingtippdetails</target>
       </trans-unit>
       <trans-unit id="tl_marketing_tip.show.1">
         <source>Show the details of marketing tip ID %s</source>
-        <target>Die Details des Marketingtips ID %s anzeigen</target>
+        <target>Die Details des Marketingtipps ID %s anzeigen</target>
       </trans-unit>
       <trans-unit id="tl_marketing_tip.edit.0">
         <source>Edit marketing tip</source>
-        <target>Marketingtip bearbeiten</target>
+        <target>Marketingtipp bearbeiten</target>
       </trans-unit>
       <trans-unit id="tl_marketing_tip.edit.1">
         <source>Edit marketing tip ID %s</source>
-        <target>Marketingtip ID %s bearbeiten</target>
+        <target>Marketingtipp ID %s bearbeiten</target>
       </trans-unit>
       <trans-unit id="tl_marketing_tip.delete.0">
         <source>Delete marketing tip</source>
-        <target>Marketingtip löschen</target>
+        <target>Marketingtipp löschen</target>
       </trans-unit>
       <trans-unit id="tl_marketing_tip.delete.1">
         <source>Delete marketing tip ID %s</source>
-        <target>Marketingtip ID %s löschen</target>
+        <target>Marketingtipp ID %s löschen</target>
       </trans-unit>
     </body>
   </file>

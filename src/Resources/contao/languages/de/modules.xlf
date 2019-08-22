@@ -3,27 +3,27 @@
     <body>
       <trans-unit id="MOD.marketingTip.0">
         <source>Marketing tip</source>
-        <target>Vermarktungs-Tip</target>
+        <target>Vermarktungs-Tipp</target>
       </trans-unit>
       <trans-unit id="MOD.marketingTip.1">
         <source>Manage marketing tips</source>
-        <target>Vermarktungs-Tips verwalten</target>
+        <target>Vermarktungs-Tipps verwalten</target>
       </trans-unit>
       <trans-unit id="FMD.marketingTipList.0">
         <source>Marketing tip list</source>
-        <target>Vermarktungstip-Liste</target>
+        <target>Vermarktungstipp-Liste</target>
       </trans-unit>
       <trans-unit id="FMD.marketingTipList.1">
         <source>Adds a list of marketing tips to the page</source>
-        <target>Fügt der Seite eine Vermarktungstip-Liste hinzu</target>
+        <target>Fügt der Seite eine Vermarktungstipp-Liste hinzu</target>
       </trans-unit>
       <trans-unit id="FMD.marketingTipCreate.0">
         <source>Create tip list</source>
-        <target>Vermarktungstip Erstellen</target>
+        <target>Vermarktungstipp Erstellen</target>
       </trans-unit>
       <trans-unit id="FMD.marketingTipCreate.1">
         <source>Adds a form to create marketing tips to the page</source>
-        <target>Fügt der Seite ein Formular zur Erstellung von Vermarktungstips hinzu</target>
+        <target>Fügt der Seite ein Formular zur Erstellung von Vermarktungstipps hinzu</target>
       </trans-unit>
     </body>
   </file>

@@ -3,7 +3,7 @@
     <body>
       <trans-unit id="MSC.marketingTipEmptyList">
         <source>No marketing tips available.</source>
-        <target>Es sind keine Vermartkungstips vorhanden.</target>
+        <target>Es sind keine Vermartkungstipps vorhanden.</target>
       </trans-unit>
       <trans-unit id="MSC.createMarketingTip">
         <source>Save</source>
@@ -11,7 +11,7 @@
       </trans-unit>
       <trans-unit id="MSC.newMarketingTipSubject">
         <source>New marketing tip on %s</source>
-        <target>Neuer Vermarktungstip auf %s</target>
+        <target>Neuer Vermarktungstipp auf %s</target>
       </trans-unit>
       <trans-unit id="MSC.newMarketingTipText">
         <source>A new marketing tip was posted on your website.%sPlease check the address information. </source>
