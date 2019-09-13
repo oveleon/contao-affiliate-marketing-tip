@@ -49,6 +49,30 @@
         <source>Plase enter the reason for the rejection.</source>
         <target>Bitte geben Sie den Grund für die Ablehnung ein.</target>
       </trans-unit>
+      <trans-unit id="tl_marketing_tip.priceSale.0">
+        <source>Selling price</source>
+        <target>Verkaufspreis</target>
+      </trans-unit>
+      <trans-unit id="tl_marketing_tip.priceSale.1">
+        <source>Plase enter the selling price.</source>
+        <target>Bitte geben Sie den Verkaufspreis ein.</target>
+      </trans-unit>
+      <trans-unit id="tl_marketing_tip.brokerCommission.0">
+        <source>Broker's commission</source>
+        <target>Maklerprovision</target>
+      </trans-unit>
+      <trans-unit id="tl_marketing_tip.brokerCommission.1">
+        <source>Plase enter the broker's commission.</source>
+        <target>Bitte geben Sie die Maklerprovision ein.</target>
+      </trans-unit>
+      <trans-unit id="tl_marketing_tip.commission.0">
+        <source>Commission</source>
+        <target>Provision</target>
+      </trans-unit>
+      <trans-unit id="tl_marketing_tip.commission.1">
+        <source>The partner's payout commission is entered here. If the value is 0, it will be calculated automatically when saving.</source>
+        <target>Hier wird die Auszahlungsprovision des Partner eingetragen. Sollte der Wert auf 0 stehen, wird dieser beim Speichern automatisch berechnet.</target>
+      </trans-unit>
       <trans-unit id="tl_marketing_tip.tstamp.0">
         <source>Revision date</source>
         <target>Änderungsdatum</target>

@@ -38,8 +38,9 @@ $GLOBALS['TL_DCA']['tl_marketing_tip'] = array
         ),
         'label' => array
         (
-            'fields'                  => array('street', 'postal', 'city', 'status'),
+            'fields'                  => array('member', 'street', 'postal', 'city', 'status'),
             'showColumns'             => true,
+            'label_callback'          => array('tl_marketing_tip', 'determineUsername')
         ),
         'global_operations' => array
         (
@@ -86,6 +87,7 @@ $GLOBALS['TL_DCA']['tl_marketing_tip'] = array
     'subpalettes' => array
     (
         'status_rejected'             => 'reason',
+        'status_success'              => 'priceSale,brokerCommission,commission',
     ),
 
     // Fields
@@ -97,6 +99,7 @@ $GLOBALS['TL_DCA']['tl_marketing_tip'] = array
         ),
         'tstamp' => array
         (
+            'label'                   => &$GLOBALS['TL_LANG']['tl_marketing_tip']['tstamp'],
             'sql'                     => "int(10) unsigned NOT NULL default '0'"
         ),
         'member' => array
@@ -144,6 +147,7 @@ $GLOBALS['TL_DCA']['tl_marketing_tip'] = array
             'search'                  => true,
             'inputType'               => 'select',
             'options'                 => array('pending', 'open', 'success', 'rejected'),
+            'reference'               => &$GLOBALS['TL_LANG']['tl_marketing_tip'],
             'eval'                    => array('submitOnChange'=>true, 'mandatory'=>true, 'chosen'=>true, 'includeBlankOption'=>true, 'tl_class'=>'w50'),
             'sql'                     => "varchar(8) NOT NULL default ''",
         ),
@@ -154,6 +158,34 @@ $GLOBALS['TL_DCA']['tl_marketing_tip'] = array
             'inputType'               => 'text',
             'eval'                    => array('maxlength'=>255, 'tl_class'=>'w50'),
             'sql'                     => "varchar(255) NOT NULL default ''"
+        ),
+        'priceSale' => array
+        (
+            'label'                   => &$GLOBALS['TL_LANG']['tl_marketing_tip']['priceSale'],
+            'exclude'                 => true,
+            'inputType'               => 'text',
+            'eval'                    => array('mandatory'=>true, 'maxlength'=>255, 'tl_class'=>'w50'),
+            'sql'                     => "int(10) unsigned NOT NULL default '0'"
+        ),
+        'brokerCommission' => array
+        (
+            'label'                   => &$GLOBALS['TL_LANG']['tl_marketing_tip']['brokerCommission'],
+            'exclude'                 => true,
+            'inputType'               => 'text',
+            'eval'                    => array('mandatory'=>true, 'maxlength'=>10, 'tl_class'=>'w50'),
+            'sql'                     => "decimal(10,2) NULL default '3.57'"
+        ),
+        'commission' => array
+        (
+            'label'                   => &$GLOBALS['TL_LANG']['tl_marketing_tip']['commission'],
+            'exclude'                 => true,
+            'inputType'               => 'text',
+            'eval'                    => array('maxlength'=>10, 'tl_class'=>'w50'),
+            'save_callback' => array
+            (
+                array('tl_marketing_tip', 'calculateCommission')
+            ),
+            'sql'                     => "decimal(10,2) NULL default NULL"
         ),
     )
 );
@@ -175,4 +207,53 @@ class tl_marketing_tip extends Backend
 		parent::__construct();
 		$this->import('BackendUser', 'User');
 	}
+
+    /**
+     * Determine and add username
+     *
+     * @param array         $row
+     * @param string        $label
+     * @param DataContainer $dc
+     * @param array         $args
+     *
+     * @return array
+     */
+    public function determineUsername($row, $label, DataContainer $dc, $args)
+    {
+        $objMember = \MemberModel::findByPk($row['member']);
+
+        if ($objMember === null)
+        {
+            $args[0] = '---';
+
+            return $args;
+        }
+
+        $args[0] = $objMember->firstname . ' ' . $objMember->lastname . ' (' . $objMember->username . ')';
+
+        // translate date
+        $args[5] = date(\Config::get('datimFormat'), $args[5]);
+
+        return $args;
+    }
+
+    /**
+     * Calculates commission
+     *
+     * @param mixed         $varValue
+     * @param DataContainer $dc
+     *
+     * @return mixed
+     */
+    public function calculateCommission($varValue, DataContainer $dc)
+    {
+        if ($varValue && $varValue != 0)
+        {
+            return $varValue;
+        }
+
+        $commission = intval($dc->activeRecord->priceSale) / 100 * floatval($dc->activeRecord->brokerCommission) * 0.1;
+
+        return $commission;
+    }
 }
