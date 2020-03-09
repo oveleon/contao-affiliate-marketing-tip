@@ -301,6 +301,11 @@ class ModuleMarketingTipStatistics extends \Module
 
             $this->validYears  = array_reverse($this->validYears);
             $this->currentYear = $this->getSortingFlag() ?: $this->validYears[0];
+
+            if(!in_array($this->currentYear, $this->validYears) && count($this->validYears))
+            {
+                $this->currentYear = $this->validYears[0];
+            }
         }
 
         $arrFieldData = array(
