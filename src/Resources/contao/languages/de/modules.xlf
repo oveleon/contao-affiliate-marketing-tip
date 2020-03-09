@@ -25,6 +25,14 @@
         <source>Adds a form to create marketing tips to the page</source>
         <target>Fügt der Seite ein Formular zur Erstellung von Vermarktungstips hinzu</target>
       </trans-unit>
+      <trans-unit id="FMD.marketingTipStatistics.0">
+        <source>Tip statistics</source>
+        <target>Vermarktungstip Statistik</target>
+      </trans-unit>
+      <trans-unit id="FMD.marketingTipStatistics.1">
+        <source>Adds a statistics overview to the page</source>
+        <target>Fügt der Seite eine Statistik-Übersicht hinzu</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

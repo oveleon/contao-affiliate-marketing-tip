@@ -1,0 +1,101 @@
+<?php
+    if($this->addChart){
+        $GLOBALS['TL_JAVASCRIPT'][] = 'bundles/contaoaffiliatemarketingtip/uvcharts.full.min.js';
+    }
+?>
+
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+
+<?php if($this->addSorting): ?>
+<form action="<?=$this->formAction?>" id="<?= $this->formId ?>" method="post" enctype="application/x-www-form-urlencoded">
+    <div class="formbody">
+        <input type="hidden" name="FORM_SUBMIT" value="<?= $this->formId ?>">
+        <input type="hidden" name="REQUEST_TOKEN" value="{{request_token}}">
+        <div class="fields">
+            <?= $this->sortingFields ?>
+        </div>
+    </div>
+</form>
+<?php endif; ?>
+
+<?php if($this->addChart): ?>
+    <?php if(!$this->isEmpty): ?>
+        <div id="stat-bar"></div>
+        <script>
+            var config = {
+                graph : {
+                    bgcolor: 'none',
+                    orientation: 'Vertical',
+                    custompalette : ['#2d89b2','#2ea6d0','#32b5e2','#33bdeb'],
+                    opacity: .95
+                },
+                meta : {
+                    position: '#stat-bar'
+                },
+                dimension : {
+                    width : 500,
+                    height : 300
+                },
+                margin : {
+                    top : 20,
+                    bottom : 30,
+                    left : 30,
+                    right : 0
+                },
+                axis : {
+                    showsubticks : false,
+                    fontfamily : 'Montserrat',
+                    fontsize: 10,
+                    fontweight: 400
+                },
+
+                frame : {
+                    bgcolor: 'none'
+                },
+                label : {
+                    fontfamily: 'Montserrat',
+                    fontsize: 9
+                },
+                legend : {
+                    showlegends: false,
+                    fontfamily: 'Montserrat'
+                },
+                tooltip: {
+                    show: false
+                },
+                bar: {
+                    fontfamily: 'Montserrat',
+                    fontweight: 500,
+                },
+                effects: {
+                    hovercolor: false,
+                    strokecolor: 'none',
+                    textcolor: '#fff',
+                    duration: 500
+                }
+            };
+
+            var chartData = JSON.parse('<?=$this->chartData?>');
+
+            uv.chart('StackedBar', chartData, config);
+        </script>
+    <?php else: ?>
+        <div class="no-data"><p><?=$this->messageEmpty?></p></div>
+    <?php endif; ?>
+<?php endif; ?>
+
+<?php if(!$this->isEmpty): ?>
+    <table>
+    <?php foreach ($this->statTable as $type => $rows): ?>
+        <tr class="<?=$type?>">
+            <?php foreach ($rows as $col): ?>
+                <td><?=$col?></td>
+            <?php endforeach; ?>
+        </tr>
+    <?php endforeach; ?>
+    </table>
+<?php endif; ?>
+
+<?php $this->endblock(); ?>

@@ -19,9 +19,10 @@ array_insert($GLOBALS['BE_MOD']['content'], 5, array
 // Front end modules
 array_insert($GLOBALS['FE_MOD']['user'], 0, array
 (
-    'marketingTipList'    => '\\Oveleon\\ContaoAffiliateMarketingTip\\ModuleMarketingTipList',
-    'marketingTipCreate'  => '\\Oveleon\\ContaoAffiliateMarketingTip\\ModuleMarketingTipCreate',
+    'marketingTipList'      => '\\Oveleon\\ContaoAffiliateMarketingTip\\ModuleMarketingTipList',
+    'marketingTipCreate'    => '\\Oveleon\\ContaoAffiliateMarketingTip\\ModuleMarketingTipCreate',
+    'marketingTipStatistics'=> '\\Oveleon\\ContaoAffiliateMarketingTip\\ModuleMarketingTipStatistics',
 ));
 
 // Models
-$GLOBALS['TL_MODELS']['tl_marketing_tip']         = '\\Oveleon\\ContaoAffiliateMarketingTip\\MarketingTipModel';
+$GLOBALS['TL_MODELS']['tl_marketing_tip'] = '\\Oveleon\\ContaoAffiliateMarketingTip\\MarketingTipModel';

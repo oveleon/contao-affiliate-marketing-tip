@@ -111,6 +111,27 @@
         <target>Löschen</target>
       </trans-unit>
 
+      <trans-unit id="tl_marketing_tip.sorting">
+        <source>Statistics for the year</source>
+        <target>Statistik für das Jahr</target>
+      </trans-unit>
+      <trans-unit id="tl_marketing_tip.col">
+        <source>Recommendation %s</source>
+        <target>Empfehlung %s</target>
+      </trans-unit>
+      <trans-unit id="tl_marketing_tip.currency">
+        <source> €</source>
+        <target> €</target>
+      </trans-unit>
+      <trans-unit id="tl_marketing_tip.total_amount">
+        <source>Total amount</source>
+        <target>Gesamtsumme</target>
+      </trans-unit>
+      <trans-unit id="tl_marketing_tip.messageEmpty">
+        <source>No completed commissions found for the year %s.</source>
+        <target>Keine abgeschlossenen Provisionen / Empfehlungen für das Jahr %s gefunden.</target>
+      </trans-unit>
+
       <trans-unit id="tl_marketing_tip.member_legend">
         <source>Member</source>
         <target>Mitglied</target>
