@@ -140,7 +140,7 @@ class ModuleMarketingTipStatistics extends \Module
 
             $sum = [];
             $rows = [
-                'header'  => [''],
+                'header'  => [$this->currentYear],
                 0         => [],
                 1         => [],
                 2         => [],
